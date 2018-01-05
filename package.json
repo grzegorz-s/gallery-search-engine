@@ -1,5 +1,6 @@
 {
   "name": "gallery-search",
+  "homepage": "https://grzegorz-s.github.io/gallery-search-engine/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,9 +16,12 @@
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
