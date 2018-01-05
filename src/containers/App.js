@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Home from '../containers/Home';
 
 //import react router deps
-import { Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { store, history } from '../store/Store';
 
 class App extends React.Component {
