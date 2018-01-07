@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { fetchGallery } from '../actions/actionsCreators';
 import Loader from '../components/Loader';
 
-import { GalleryBlock, GalleryTitle, ImagesHld, Image } from '../styled/Gallery';
-
-
 class Gallery extends React.Component {
 
   componentDidMount() {
@@ -14,15 +11,15 @@ class Gallery extends React.Component {
 
   render() {
     return(
-      <GalleryBlock>
-        <GalleryTitle>TAG: {this.props.tag}</GalleryTitle>
-        <ImagesHld>
+      <div className="gallery">
+        <h3 className="gallery__title">TAG: {this.props.tag}</h3>
+        <figure className="gallery__image-hld">
           {this.props.gallery.isFetching ? <Loader /> : ''}
           {this.props.gallery.images.map((image, i) => {
-            return <Image key={i} src={image.mediaUrl} />
+            return <img className="gallery__image" key={i} alt={image.title} src={image.mediaUrl} />
           })}
-        </ImagesHld>
-      </GalleryBlock>
+        </figure>
+      </div>
     )
   }
 }

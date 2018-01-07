@@ -2,21 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Sidebar from '../components/Sidebar';
 import Gallery from '../components/Gallery';
-import { AppBackground, AppWrapper } from '../styled/App'
-import { GalleriesHld } from '../styled/Gallery';
-
 
 class Home extends React.Component {
   render() {
     return(
       <div className="app-body">
-        <AppBackground />
-        <AppWrapper>
+        <div className="app-background" />
+        <div className="app-wrapper">
           <Sidebar />
-          <GalleriesHld>
+          <div className="galleries-hld">
             {this.props.galleryTags.map((tag, i) => <Gallery key={i} tag={tag} />)}
-          </GalleriesHld>
-        </AppWrapper>
+          </div>
+        </div>
       </div>
     )
   }
