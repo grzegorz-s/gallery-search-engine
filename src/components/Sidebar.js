@@ -28,7 +28,7 @@ class Sidebar extends React.Component {
         <div className="app-sidebar__inner">
         <h1 className="t-h1 u-center">GALLERIES</h1>
           <ReactCSSTransitionGroup
-          transitionName="example"
+          transitionName="fade"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
           {Object.keys(this.props.gallery).map(this.renderTags.bind(this))}
