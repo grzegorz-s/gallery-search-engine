@@ -1,6 +1,4 @@
 function gallery(state = {}, action) {
-  console.log(state);
-  // console.log(msg)
   switch (action.type) {
     case 'ADD_GALLERY':
       return {...state,

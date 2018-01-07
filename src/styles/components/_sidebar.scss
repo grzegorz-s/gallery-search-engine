@@ -1,0 +1,16 @@
+.app-sidebar {
+  width: 250px;
+}
+
+.app-sidebar__inner {
+  position: sticky;
+  top: 0;
+  border-radius: 4px;
+  background: rgba($c-black, 0.6);
+  box-shadow: 6px 0 10px 10px rgba($c-black, .03);
+  padding: 25px;
+}
+
+.app-sidebar__tag {
+  display: flex;
+}

@@ -2,43 +2,43 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addGallery, removeGallery } from '../actions/actionsCreators';
 
-import { H1, P} from '../styled/Typo';
-import { DeleteButton, Form, FormTextInput } from '../styled/App';
-import { SidebarBody, SidebarInner, SidebarTag } from '../styled/Sidebar';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Sidebar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('submit');
-    const galleryTag = this.tag.value;
+    const galleryTag = this.refs.tag.value;
     this.props.addGallery(galleryTag);
-    this.galleryForm.reset();
+    this.refs.galleryForm.reset();
   }
 
   renderTags(tag, i) {
-    // console.log(gallery);
     return (
-      <SidebarTag key={i}>
-        <P>{tag}</P>
-        <DeleteButton onClick={this.props.removeGallery.bind(null, tag, i)} />
-      </SidebarTag>
+      <div className="app-sidebar__tag" key={i}>
+        <p>{tag}</p>
+        <button className="delete-btn" onClick={this.props.removeGallery.bind(null, tag, i)} />
+      </div>
     )
   }
 
   render() {
-    console.log(this.props);
     return(
-      <SidebarBody>
-        <SidebarInner>
-        <H1>GALLERIES</H1>
-        {Object.keys(this.props.gallery).map(this.renderTags.bind(this))}
-        <Form innerRef={(form) => this.galleryForm = form} type="text" onSubmit={this.handleSubmit.bind(this)}>
-          <FormTextInput type="text" innerRef={(input) => this.tag = input} placeholder="add new" />
-          <input type="submit" hidden /> 
-        </Form>
-        </SidebarInner>
-      </SidebarBody>
+      <aside className="app-sidebar">
+        <div className="app-sidebar__inner">
+        <h1 className="t-h1 u-center">GALLERIES</h1>
+          <ReactCSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          {Object.keys(this.props.gallery).map(this.renderTags.bind(this))}
+          </ReactCSSTransitionGroup>
+          <form className="submit-form" ref="galleryForm" type="text" onSubmit={this.handleSubmit.bind(this)}>
+            <input className="submit-form__text-input" type="text" ref="tag" placeholder="add new" />
+            <input type="submit" hidden /> 
+          </form>
+        </div>
+      </aside>
     )
   }
 }
@@ -53,5 +53,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
-
-// export default Sidebar;

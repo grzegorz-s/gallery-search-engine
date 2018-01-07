@@ -1,0 +1,47 @@
+.submit-form {
+  position: relative;
+  margin-top: 25px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    width: 21px;
+    height: 21px;
+    margin: auto;
+    background: url($submitIcon) top left no-repeat;
+  }
+}
+
+.submit-form__text-input {
+  display: block;
+  padding: 5px 60px 5px 15px;
+  width: 100%;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  box-shadow: none;
+  color: $c-gray;
+  font-size: 20px;
+  transition: all ease .2s;
+
+  &::-webkit-input-placeholder {
+    color: $c-gray;
+  }
+  &::-moz-placeholder {
+    color: $c-gray;
+  }
+  &:-ms-input-placeholder {
+    color: $c-gray;
+  }
+  &:-moz-placeholder {
+    color: $c-gray;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #43B05C;
+  }
+}

@@ -1,0 +1,17 @@
+@import './base/_normalize.scss';
+@import './base/_variables.scss';
+@import './base/_utilities.scss';
+@import './base/_animations.scss';
+@import './base/_typo.scss';
+@import '_base.scss';
+
+//components
+@import './components/_buttons.scss';
+@import './components/_form.scss';
+@import './components/_gallery.scss';
+@import './components/_loader.scss';
+@import './components/_sidebar.scss';
+
+
+//containers
+@import './containers/_app.scss';

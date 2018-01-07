@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+
+.height-enter.height-enter-active {
+  // opacity: 1;
+  transition: height 500ms ease-in;
+}
+.height-leave.height-leave-active {
+  // height: 0.01;
+  transition: height 300ms ease-in;
+}
